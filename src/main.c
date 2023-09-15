@@ -29,6 +29,21 @@ int main()
 		playerMove();
 
 		winner = checkWinner();
+
+		if (winner != ' ' || checkFreeSpaces() == 0)
+		{
+			break;
+		}
+
+		computerMove();
+
+		winner = checkWinner();
+
+		if (winner != ' ' || checkFreeSpaces() == 0)
+		{
+			break;
+		}
+		
 	}
 	
         return 0;
@@ -114,7 +129,20 @@ void playerMove()
 
 void computerMove()
 {
+	srand(time(0));
+	int x;
+	int y;
 
+	if (checkFreeSpaces() > 0)
+	{
+		do
+		{
+			x = rand() % 3
+			y = rand() % 3
+		} while (board[x][y] != ' ');
+		
+	}
+	
 }
 
 
