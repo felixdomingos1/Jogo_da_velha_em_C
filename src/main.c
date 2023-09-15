@@ -14,7 +14,7 @@ int checkFreeSpaces();
 void playerMove();
 void computerMove();
 char checkWinner();
-void printWinner();
+void printWinner(char);
 
 
 int main()
@@ -46,6 +46,9 @@ int main()
 		
 	}
 	
+	printBoard();
+	printWinner(winner);
+
         return 0;
 }
 
@@ -112,7 +115,7 @@ void playerMove()
 		scanf(" %d ",&y);
 		y--;
 
-		if (board[x][y] == ' ')
+		if (board[x][y] != ' ')
 		{
 			printf("Envalid Move!\n");
 		}
@@ -121,7 +124,7 @@ void playerMove()
 			board[x][y] = Player;
 			break;
 		}
-	} while (board[x][y] == ' ');
+	} while (board[x][y] != ' ');
 	
 	
 }
@@ -163,11 +166,11 @@ char checkWinner()
 		
 	}
 
-	for (int j = 0; j < 3; j++)
+	for (int i = 0; i < 3; i++)
 	{
-		if (board[0][j] == board[1][j] && board[0][j] == board[2][j])
+		if (board[0][i] == board[1][i] && board[0][i] == board[2][i])
 		{
-			return board[0][j];
+			return board[0][i];
 		}
 		
 	}
@@ -175,7 +178,7 @@ char checkWinner()
 	{
 		return board[0][0];
 	}
-	if (board[0][2] == board[1][1] && board[0][0] == board[2][0])
+	if (board[0][2] == board[1][1] && board[0][2] == board[2][0])
 	{
 		return board[0][2];
 	}
