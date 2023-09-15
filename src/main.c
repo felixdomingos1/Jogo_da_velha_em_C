@@ -137,11 +137,17 @@ void computerMove()
 	{
 		do
 		{
-			x = rand() % 3
-			y = rand() % 3
+			x = rand() % 3;
+			y = rand() % 3;
 		} while (board[x][y] != ' ');
 		
+		board[x][y] = Computer;
 	}
+	else
+	{
+		printWinner(' ');
+	}
+	
 	
 }
 
