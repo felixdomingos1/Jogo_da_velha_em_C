@@ -13,7 +13,7 @@ void printBoard();
 int checkFreeSpaces();
 void playerMove();
 void computerMove();
-void checkWinner();
+char checkWinner();
 void printWinner();
 
 
@@ -28,7 +28,7 @@ int main()
 
 		playerMove();
 
-		winner = checkFreeSpaces();
+		winner = checkWinner();
 	}
 	
         return 0;
@@ -118,7 +118,7 @@ void computerMove()
 }
 
 
-void checkWinner()
+char checkWinner()
 {
 
 }
