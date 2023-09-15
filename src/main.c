@@ -183,7 +183,21 @@ char checkWinner()
 }
 
 
-// void printWinner(char winner)
-// {
+void printWinner(char winner)
+{
+	if (winner == Player)
+	{
+		printf("You Win!");
 
-// }
+	}if (winner == Computer)
+	{
+		printf("You lose!");
+		
+	}
+	else
+	{
+		printf("IT is a TIE !");
+	}
+	
+	
+}
